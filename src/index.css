@@ -160,15 +160,18 @@
   border-color: #3498db !important;
 }
 
-.social {
-  display: block;
+.sButton {
+  padding: 1rem;
+  align-items: center;
   justify-content: space-between;
 }
 
-.sButton {
-  padding-right: 1.5rem;
-  align-items: center;
-  justify-content: space-between;
+.sButton:first-child {
+  padding-left: 0;
+}
+
+.sButton:last-child {
+  padding-right: 0;
 }
 
 .sButton > svg:hover {

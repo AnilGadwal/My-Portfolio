@@ -5,7 +5,6 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import './index.css';
 import Home from "./Home";
 import Projects from "./Projects";
-import About from "./About";
 import Contact from "./Contact";
 import Navbar from "./Navbar";
 
@@ -16,7 +15,6 @@ const App = () => {
     <Navbar />
     <Switch>
       <Route exact path="/" component={Home}/>
-      <Route exact path="/about" component={About}/>
       <Route exact path="/project" component={Projects}/>
       <Route exact path="/contact" component={Contact}/>
       <Redirect to="/"/>

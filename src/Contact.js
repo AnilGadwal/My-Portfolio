@@ -11,6 +11,7 @@ function Contact() {
 
     const InputEvent= (event) => {
         const{name, value} = event.target;
+
         setData((preVal =>{
             return{
                 ...preVal, 
@@ -22,6 +23,7 @@ function Contact() {
 
     const formSubmit = (e) =>{
         e.preventDefault();
+        console.log()
     }; 
 
     return (

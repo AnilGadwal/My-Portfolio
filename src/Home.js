@@ -6,7 +6,7 @@ function Home() {
     return (
         <div>
         <Common 
-        name="Grow your bussiness with" 
+        name="Hi, i am" 
         imgsrc={logo}
         visit="./project"
         btname="View Projects"/>

@@ -24,10 +24,11 @@ function Navbar() {
           <NavLink activeClassName="menu_active" exact className="nav-link" to="project">Projects</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink activeClassName="menu_active" exact className="nav-link" to="about">About</NavLink>
+          <NavLink activeClassName="menu_active" exact className="nav-link" to="contact">Contact</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink activeClassName="menu_active" exact className="nav-link" to="contact">Contact</NavLink>
+          <a activeClassName="menu_active" exact className="nav-link" 
+          href="https://drive.google.com/file/d/1HCIfpuzc4Ma9uG1LVteC1o_TLvodSk54/view?usp=sharing" target="_blank">Resume</a>
         </li>
       </ul>
     </div>
