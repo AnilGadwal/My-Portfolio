@@ -14,7 +14,7 @@ function Projects() {
                 <div className="col-10 mx-auto">
                     <div className="row gy-4">
                        {Pdata.map((val, ind) =>{
-                           return <Card key={ind} imgsrc={val.imgsrc} title={val.title} desc={val.desc} liveUrl={val.liveUrl}/>
+                           return <Card key={ind} imgsrc={val.imgsrc} title={val.title} desc={val.desc} liveUrl={val.liveUrl} gitUrl={val.gitUrl}/>
                        })}
                     </div>
                 </div>
