@@ -1,60 +1,77 @@
 import React, { useState } from 'react'
 import Social from "./Social"
+import { db } from "./contactdb";
 
-function Contact() {
-    const [data, setData] = useState({
-        fullname:'',
-        phone:'',
-        email:'',
-        msg:'',
-    });
+const Contact = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [message, setMessage] = useState('');
 
-    const InputEvent= (event) => {
-        const{name, value} = event.target;
-
-        setData((preVal =>{
-            return{
-                ...preVal, 
-                [name] : value,
-            }            
-        }))
-    }
-
-
-    const formSubmit = (e) =>{
+    const [loader, setLoader] = useState(false)
+    
+    const handleSubmit = (e) =>{
         e.preventDefault();
-        console.log()
-    }; 
+        setLoader(true)
+
+        db.collection('messages').add({
+            name: name,
+            email: email,
+            message: message,
+            phone: phone,
+        })
+           .then(() =>{
+               alert('Message has been submitted')
+               setLoader(false)
+           }) 
+           .catch((error) => {
+            alert(error.message);
+            setLoader(false)
+          });
+
+          setName("");
+          setPhone("");
+          setEmail("");
+          setMessage("");
+        }
 
     return (
         <>
         <div className="my-5">
             <h1 className="text-center">C O N T A C T</h1>
         </div>
+
         <div className="container contact_div">
             <div className="row">
                 <div className="col-md-6 col-10 mx-auto">
-                <form onSubmit={formSubmit}>
+
+  <form onSubmit={handleSubmit}>
+
   <div className="form-group pb-3">
     <label htmlFor="exampleFormControlInput1 ">Full Name</label>
-    <input name="fullname" value={data.fullname} onChange={InputEvent} type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter your name" />
+    <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter your name" />
   </div>
+
   <div className="form-group pb-3">
     <label htmlFor="exampleFormControlInput1">Phone</label>
-    <input name="phone" value={data.phone} onChange={InputEvent} type="number" className="form-control" id="exampleFormControlInput1" placeholder="Enter your Phone number"/>
+    <input value={phone} onChange={(e) => setPhone(e.target.value)} type="number" className="form-control" id="exampleFormControlInput1" placeholder="Enter your Phone number"/>
   </div>
+
   <div className="form-group pb-3">
     <label htmlFor="exampleFormControlInput1">Email address</label>
-    <input name="email" value={data.email} onChange={InputEvent} type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
   </div>
+
   <div className="form-group pb-3">
     <label htmlFor="exampleFormControlTextarea1">Message</label>
-    <textarea name="msg" value={data.msg} onChange={InputEvent} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea value={message} onChange={(e) => setMessage(e.target.value)} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
-        <br></br>
+
+        <br/>
   <div className="col-12">
-      <button className="btn btn-outline-dark mb-5" type="submit">Submit</button>
+      <button className="btn btn-dark mb-5" type="submit" style={{background : loader ? "#ccc" : ""}}>Submit</button>
   </div>
+
 </form>
 <h5 className="my-3">
 <strong className="brand-name">Follow</strong> me on
