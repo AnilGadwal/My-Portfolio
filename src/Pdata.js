@@ -2,6 +2,7 @@ import netflix from "./projects/netflix.JPG"
 import spotify from "./projects/spotify.jpg"
 import instagram from "./projects/instagram.jpg"
 import portfolio from "./projects/portfolio.jpg"
+import amazon from "./projects/amazon.JPG"
 
 const Pdata = [
     {
@@ -27,6 +28,14 @@ const Pdata = [
         liveUrl: "https://instagram-clone-7dca2.web.app/",
         gitUrl: "https://github.com/AnilGadwal/Instagram-clone/"
     },
+    
+    {
+        imgsrc: amazon,
+        title: "Amazon clone",
+        desc: "Made this using amazon clone using reactJS, materialUI, react Router, Context Api",
+        liveUrl: "https://clone-90d65.web.app/",
+        gitUrl: "https://github.com/AnilGadwal/amazon-clone/"
+    },
 
     {
         imgsrc: portfolio,
@@ -35,6 +44,7 @@ const Pdata = [
         liveUrl: "https://my-portfolio-76ddd.web.app/",
         gitUrl: "https://github.com/AnilGadwal/My-portfolio/"
     },
+    
 ]
 
 export default Pdata;
