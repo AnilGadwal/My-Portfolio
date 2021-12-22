@@ -1,8 +1,9 @@
 import netflix from "./projects/netflix.JPG"
 import spotify from "./projects/spotify.jpg"
-import instagram from "./projects/instagram.jpg"
 import portfolio from "./projects/portfolio.jpg"
 import amazon from "./projects/amazon.JPG"
+import portfolio2 from "./projects/portfolio2.PNG"
+import guided from "./projects/guided.PNG"
 
 const Pdata = [
     {
@@ -19,14 +20,6 @@ const Pdata = [
         desc: "Recreated a frontend only clone of Spotify desktop version using ReactJs and Spotify's own api for developers and hosted using firebase, also has Spotify's user authentication",
         liveUrl: "https://spotify-clone-8dbf1.web.app/",
         gitUrl: "https://github.com/AnilGadwal/Spotify-clone/"
-    },
-
-    {
-        imgsrc: instagram,
-        title: "Instgram clone",
-        desc: "Made an Instagram clone with ReactJs and Firebase realtime database, with user authentication. It can post pictures and you can also use the comment functionality",
-        liveUrl: "https://instagram-clone-7dca2.web.app/",
-        gitUrl: "https://github.com/AnilGadwal/Instagram-clone/"
     },
     
     {
@@ -45,6 +38,21 @@ const Pdata = [
         gitUrl: "https://github.com/AnilGadwal/My-portfolio/"
     },
     
+    {
+        imgsrc: portfolio2,
+        title: "My portfolio v2",
+        desc: "Made this Portfolio website from scratch using ReactJs and css3, I hosted the site with firebase",
+        liveUrl: "https://my-portfolio-v2-35dbe.firebaseapp.com/",
+        gitUrl: "https://github.com/AnilGadwal/My-portfolio-v2"
+    },
+
+    {
+        imgsrc: guided,
+        title: "Guided Troubleshoot app",
+        desc: "A guided troubleshoot app for android app troubleshooting made using react router v6 and css3, it was an interview assignment given to me.",
+        liveUrl: "https://guided-troubleshoot.web.app/",
+        gitUrl: "https://github.com/AnilGadwal/guided-troubleshoot"
+    },
 ]
 
 export default Pdata;
